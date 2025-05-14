@@ -34,3 +34,21 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+describe('adding element to stack', () => {
+    it('should return the element on top of the stack: "rövsmör"', async () => {
+        let push = await driver.findElement(By.id('push'));
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys("rövsmör");
+        await alert.accept();
+
+        await push.click();
+        await alert.sendKeys("bananer");
+        await alert.accept();
+
+        let peek = await driver.findElement(By.id('top_of_stack')).getText();
+        expect(peek).toEqual("rövsmör");
+
+    });
+});

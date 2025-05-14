@@ -40,11 +40,11 @@ describe('adding element to stack', () => {
         let push = await driver.findElement(By.id('push'));
         await push.click();
         let alert = await driver.switchTo().alert();
-        await alert.sendKeys("rövsmör");
+        await alert.sendKeys("bananer");
         await alert.accept();
 
         await push.click();
-        await alert.sendKeys("bananer");
+        await alert.sendKeys("rövsmör");
         await alert.accept();
 
         let peek = await driver.findElement(By.id('top_of_stack')).getText();

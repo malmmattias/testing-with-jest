@@ -24,6 +24,6 @@ test('add three elements to stack, pop one element, returned element should seco
     stack.push("Äpplen");
     stack.pop();
     expect(stack.peek()).toBeDefined();
-    expect(stack.peek()).toBe("Äpplen");
+    expect(stack.peek()).toBe("Rövsmör");
 });
 
